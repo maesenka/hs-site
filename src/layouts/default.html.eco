@@ -19,7 +19,7 @@
 	<%- @getBlock('meta').toHTML() %>
 
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- Icons -->
 		<link rel="shortcut icon" href="images/icons/favicon.ico">
@@ -38,7 +38,7 @@
 </head>
 <body>
 	<!-- Menu -->
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-left navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -50,7 +50,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<% for document in @getCollection('pages').toJSON(): %>
+					<% for document in @getCollectiosn('pages').toJSON(): %>
 						<li
 							typeof="sioc:Page"
 							about="<%= document.url %>"
@@ -67,21 +67,42 @@
 	</div>
 
 	<!-- Content -->
-	<div class="container">
-		<!-- Content -->
-		<section id="content" class="content">
-			<%- @content %>
-		</section>
+	<div class="container bs-docs-container bs-content">
+		<!-- Example row of columns -->
+		<div class="row"  >
+			<div class="col-md-2"> 				
+	        		<ul id="navbar" class="nav nav-pills nav-stacked">
+	          			<li class="active"><a href="#welcome">Welcome</a>
+	          				<ul class="nav">
+	          					<li><a>Test</a></li>
+	          				</ul>
+	          			</li>
+	          			<li><a href="#compatibility">Compatibility</a>
+	          				<ul class="nav">
+	          					<li><a>Test2</a></li>
+          					</ul>
+          				</li>
+	        		</ul>    			
+    		</div>
+  		    <div class="col-md-10">
+				<!-- Content -->
+				<section id="content">
+					<%- @content %>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<footer class="bs-footer" role="contentinfo">
+				<div class="container">
+					<p class="pull-left">&copy; Geovise <%- (new Date()).getFullYear() %></p>
+					<p class="pull-right"> This website was last updated at <%= @site.date.toISOString() %> </p>
+				</div>
+			</footer>	
+ 		</div>   
+   	</div> 
 
-		<!-- Footer -->
-		<footer>
-			<p class="pull-left">&copy; Geovise <%- (new Date()).getFullYear() %></p>
-			<p class="pull-right">
-				This website was last updated at <%= @site.date.toISOString() %>
-			</p>
-		</footer>
-	</div><!-- /container -->
 
+	
 	<!-- Scripts -->
 	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
 </body>
