@@ -1,5 +1,9 @@
+fsUtil = require('fs')
+pathUtil = require('path')
+
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
+
 docpadConfig = {
 
 	# =================================
@@ -87,6 +91,25 @@ docpadConfig = {
 
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
+
+		navs: (database) ->
+			database.findAllLive({isNav: $exists: true}, [pageOrder:1,title:1]).on "add", (document) ->
+				base = document.get("relativePath").substr(6)
+				parts = base.split("/")
+				#last element is index.html.xx file, so before last determines title and order				
+				md = {}
+				if (parts.length < 2)
+					docpad.log("ERROR - all files in pages must be at least one-level down")
+				else 				
+					part = parts[parts.length - 2]				
+					docpad.log("info", part) 
+					numAndTitle = part.split("-")				
+					if (numAndTitle.length > 1)
+						md = {layout: "page", title : numAndTitle[1], menuOrder: numAndTitle[0]}				
+				document.setMetaDefaults(md)
+
+		mains: (database) ->
+			database.findAllLive({isMain: $exists: true}, [pageOrder:1,title:1])			
 
 
 	# =================================
