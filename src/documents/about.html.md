@@ -1,7 +1,7 @@
 ```
-title: Introduction
+title: About Hibernate Spatial
 layout: page
-isNav: true
+isMain: true
 tags: ['intro','page']
 pageOrder: 1
 ```

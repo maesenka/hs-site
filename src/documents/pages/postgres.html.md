@@ -1,9 +1,8 @@
 ```
-title: Introduction
+title: postgres
 layout: page
-isNav: true
 tags: ['intro','page']
 pageOrder: 1
 ```
 
-This is a **page**
+This is the Postgres intro page

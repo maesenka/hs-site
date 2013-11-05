@@ -50,7 +50,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<% for document in @getCollectiosn('pages').toJSON(): %>
+					<% for document in @getCollection('mains').toJSON(): %>
 						<li
 							typeof="sioc:Page"
 							about="<%= document.url %>"
@@ -71,6 +71,9 @@
 		<!-- Example row of columns -->
 		<div class="row"  >
 			<div class="col-md-2"> 				
+				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url, "navs")}) %>
+
+				<!--
 	        		<ul id="navbar" class="nav nav-pills nav-stacked">
 	          			<li class="active"><a href="#welcome">Welcome</a>
 	          				<ul class="nav">
@@ -83,6 +86,7 @@
           					</ul>
           				</li>
 	        		</ul>    			
+	        	-->
     		</div>
   		    <div class="col-md-10">
 				<!-- Content -->
