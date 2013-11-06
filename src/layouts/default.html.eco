@@ -70,23 +70,8 @@
 	<div class="container bs-docs-container bs-content">
 		<!-- Example row of columns -->
 		<div class="row"  >
-			<div class="col-md-2"> 				
+			<div id="navbar" class="col-md-2"> 				
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url, "navs")}) %>
-
-				<!--
-	        		<ul id="navbar" class="nav nav-pills nav-stacked">
-	          			<li class="active"><a href="#welcome">Welcome</a>
-	          				<ul class="nav">
-	          					<li><a>Test</a></li>
-	          				</ul>
-	          			</li>
-	          			<li><a href="#compatibility">Compatibility</a>
-	          				<ul class="nav">
-	          					<li><a>Test2</a></li>
-          					</ul>
-          				</li>
-	        		</ul>    			
-	        	-->
     		</div>
   		    <div class="col-md-10">
 				<!-- Content -->
