@@ -1,7 +1,7 @@
 <% renderMenu = (items) => %>
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-stacked">
     <% for item in items: %>        
-        <li<% if item.state and item.state == 'current' : %> class="active"<% end %>>
+        <li<% if item.state: %> class="active"<% end %>>
             <a href="<%= item.url %>"><%= item.title %></a>
             <% if item.children: %>
                 <%- renderMenu(item.children) %>
