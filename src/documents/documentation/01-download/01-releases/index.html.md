@@ -1,5 +1,5 @@
 ```
-menuTitle: Getting Hibernate Spatial
+menuTitle: "Release Notes"
 isNav: true
 tags: ['postgres']
 ```

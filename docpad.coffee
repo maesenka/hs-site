@@ -94,7 +94,8 @@ docpadConfig = {
 
 		navs: (database) ->
 			database.findAllLive({isNav: $exists: true}, [pageOrder:1,title:1]).on "add", (document) ->
-				base = document.get("relativePath").substr(6)
+				docpad.log(document.get("relativePath"))
+				base = document.get("relativePath").substr("documentation/".length)
 				parts = base.split("/")
 				#last element is index.html.xx file, so before last determines title and order				
 				md = {}
@@ -106,6 +107,7 @@ docpadConfig = {
 					numAndTitle = part.split("-")				
 					if (numAndTitle.length > 1)
 						md = {layout: "page", title : numAndTitle[1], menuOrder: numAndTitle[0]}				
+					docpad.log("adds page with base: " + base)
 				document.setMetaDefaults(md)
 
 		mains: (database) ->

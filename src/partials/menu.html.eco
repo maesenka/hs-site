@@ -1,10 +1,12 @@
 <% renderMenu = (items) => %>
 <ul class="nav nav-stacked">
     <% for item in items: %>        
-        <li<% if item.state: %> class="active"<% end %>>
-            <a href="<%= item.url %>"><%= item.title %></a>
+        <li<% if item.state: %> class="active"<% end %>>            
             <% if item.children: %>
+                <a><%= item.title %></a>
                 <%- renderMenu(item.children) %>
+            <% else: %>
+            	<a href="<%= item.url %>"><%= item.title %></a>
             <% end %>
         </li>
     <% end %>

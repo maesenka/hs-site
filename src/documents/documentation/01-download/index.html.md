@@ -1,5 +1,5 @@
 ```
-menuTitle: Documentation
+menuTitle: Download
 isNav: true
 tags: ['postgres']
 ```
