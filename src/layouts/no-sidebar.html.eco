@@ -70,10 +70,9 @@
 	<div class="container bs-docs-container bs-content">
 		<!-- Example row of columns -->
 		<div class="row"  >
-			<div id="navbar" class="col-md-2"> 				
-			
-    		</div>
-  		    <div class="col-md-10">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-10">
 				<!-- Content -->
 				<section id="content">
 					<%- @content %>
