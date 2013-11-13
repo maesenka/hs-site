@@ -1,5 +1,5 @@
 ```
 menuTitle: Download
 isNav: true
-tags: ['postgres']
+tags: []
 ```
