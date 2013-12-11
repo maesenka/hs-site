@@ -96,11 +96,12 @@ docpadConfig = {
 			database.findAllLive({isNav: $exists: true}, [pageOrder:1,title:1]).on "add", (document) ->
 				docpad.log(document.get("relativePath"))
 				base = document.get("relativePath").substr("documentation/".length)
+				docpad.log("Processing: " + base)
 				parts = base.split("/")
 				#last element is index.html.xx file, so before last determines title and order				
 				md = {}
 				if (parts.length < 2)
-					docpad.log("ERROR - all files in pages must be at least one-level down")
+					docpad.log("ERROR - all files in pages must be at least one-level down (for file: " + base + ")")
 				else 				
 					part = parts[parts.length - 2]				
 					docpad.log("info", part) 

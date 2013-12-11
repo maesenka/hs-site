@@ -57,7 +57,7 @@
 			<footer class="bs-footer" role="contentinfo">
 				<div class="container">
 					<p class="pull-left">&copy; Geovise <%- (new Date()).getFullYear() %></p>
-					<p class="pull-right"> This website was last updated at <%= @site.date.toISOString() %> </p>
+					<p class="pull-right"> This website was last updated at <%= @site.date.toLocaleDateString() %> </p>
 				</div>
 			</footer>	
  		</div>   
