@@ -10,11 +10,7 @@ This tutorial assumes that you are familiar with Hibernate, and the basic concep
 
 The Hibernate Tutorial uses the H2 in-memory database. Although Hibernate Spatial supports GeoDB, the spatial extension of H2, we require a postgis database for this tutorial. For information on how to create a postgis database, you should consult the postgis documentation.
 
-Creating a Spatially-Enabled EventManager
-
-We will create a small application to store and retrieve events we want to attend. (This is the same use case as in the Hibernate Tutorial).
-
-Setup
+## Setup
 
 We first need to set up our development environment. We will use the Maven build tool in this tutorial (as this is also used in the Hibernate Tutorial).
 
@@ -38,14 +34,14 @@ Maven can generate the basic structure of our simple application using themvn ar
     Choose archetype:
     1: internal -> appfuse-basic-jsf (AppFuse archetype for creating a web application with Hibernate,
 
-  ......
+    ......
 
     36: internal -> wicket-archetype-quickstart (A simple Apache Wicket project)
     Choose a number:
     (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36)
     15: :
 
-  ......
+    ......
 
     Define value for groupId: : org.hibernatespatial.tutorials
     Define value for artifactId: : event-tutorial
@@ -87,97 +83,97 @@ Maven can generate the basic structure of our simple application using themvn ar
 This results in the following directory structure.
 
  
-                    .
-                    |-- pom.xml
-                    `-- src
-                        |-- main
-                        |   |-- java
-                        |   |   |-- event
-                        |   |      `-- App.java
-                        `-- test
-                            `-- java
-                                `-- event
+    .
+    |-- pom.xml
+    `-- src
+        |-- main
+        |   |-- java
+        |   |   |-- event
+        |   |      `-- App.java
+        `-- test
+            `-- java
+                `-- event
 
                 
 We now need to edit the pom to add the required dependencies and repositories (see also the Maven Quick Start.). The versions of the Postgis and Postgresql drivers don't matter too much. This tutorial should work with any version of the Postgis driver later than 1.3.3, and any Postgresql JDBC driver that agrees with your database.
 
                     
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.hibernatespatial.tutorials</groupId>
-    <artifactId>event-tutorial</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>event-tutorial</name>
-    <url>http://maven.apache.org</url>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>org.hibernatespatial.tutorials</groupId>
+        <artifactId>event-tutorial</artifactId>
+        <packaging>jar</packaging>
+        <version>1.0-SNAPSHOT</version>
+        <name>event-tutorial</name>
+        <url>http://maven.apache.org</url>
 
-    <build>
-         <!-- we dont want the version to be part of the generated war file name -->
-         <finalName>${artifactId}</finalName>
-         <plugins>
-               <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-         </plugins>
-    </build>
-
-
-    <dependencies>
-
-        <!-- Hibernate Spatial for postgis. This will include Hibernate Spatial Core and JTS -->
-        <dependency>
-            <groupId>org.hibernatespatial</groupId>
-            <artifactId>hibernate-spatial-postgis</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <!-- the Postgis JDBC driver -->
-        <dependency>
-            <groupId>org.postgis</groupId>
-            <artifactId>postgis-jdbc</artifactId>
-            <version>1.3.3</version>
-        </dependency>
-
-        <!-- the postgresql driver -->
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>8.4-701.jdbc3</version>
-        </dependency>
-
-        <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
-               <dependency>
-                   <groupId>org.slf4j</groupId>
-                   <artifactId>slf4j-simple</artifactId>
-                   <version>1.5.11</version>
-               </dependency>
-
-    </dependencies>
+        <build>
+             <!-- we dont want the version to be part of the generated war file name -->
+             <finalName>${artifactId}</finalName>
+             <plugins>
+                   <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.5</source>
+                            <target>1.5</target>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </plugin>
+             </plugins>
+        </build>
 
 
-    <!-- add repositories for JTS and Hibernate Spatial and Hibernate (JBoss) -->
-    <repositories>
-        <repository>
-            <id>OSGEO GeoTools repo</id>
-            <url>http://download.osgeo.org/webdav/geotools</url>
-        </repository>
-        <repository>
-            <id>Hibernate Spatial repo</id>
-            <url>http://www.hibernatespatial.org/repository</url>
-        </repository>
-        <!-- add JBOSS repository for easy access to Hibernate libraries -->
-        <repository>
-            <id>JBOSS</id>
-            <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
-        </repository>
-    </repositories>
-</project>
+        <dependencies>
+
+            <!-- Hibernate Spatial for postgis. This will include Hibernate Spatial Core and JTS -->
+            <dependency>
+                <groupId>org.hibernatespatial</groupId>
+                <artifactId>hibernate-spatial-postgis</artifactId>
+                <version>1.1</version>
+            </dependency>
+
+            <!-- the Postgis JDBC driver -->
+            <dependency>
+                <groupId>org.postgis</groupId>
+                <artifactId>postgis-jdbc</artifactId>
+                <version>1.3.3</version>
+            </dependency>
+
+            <!-- the postgresql driver -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>8.4-701.jdbc3</version>
+            </dependency>
+
+            <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
+                   <dependency>
+                       <groupId>org.slf4j</groupId>
+                       <artifactId>slf4j-simple</artifactId>
+                       <version>1.5.11</version>
+                   </dependency>
+
+        </dependencies>
+
+
+        <!-- add repositories for JTS and Hibernate Spatial and Hibernate (JBoss) -->
+        <repositories>
+            <repository>
+                <id>OSGEO GeoTools repo</id>
+                <url>http://download.osgeo.org/webdav/geotools</url>
+            </repository>
+            <repository>
+                <id>Hibernate Spatial repo</id>
+                <url>http://www.hibernatespatial.org/repository</url>
+            </repository>
+            <!-- add JBOSS repository for easy access to Hibernate libraries -->
+            <repository>
+                <id>JBOSS</id>
+                <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+            </repository>
+        </repositories>
+    </project>
 
                 
 With the command mvn dependency:list we can see which libraries are required for our minimal Hibernate Spatial application.
@@ -206,7 +202,7 @@ With the command mvn dependency:list we can see which libraries are required for
                 
 Hibernate Spatial works with a wide range of versions of these libraries, so don't be too concerned if you see either more recent or slightly older versions.
 
-The Event Class
+## The Event Class
 
 Our persistent class is the Event class. Since this class contains a geometry-valued property (a property of type Geometry), its instances are geographic objects, or features.
 
@@ -262,77 +258,77 @@ Our persistent class is the Event class. Since this class contains a geometry-va
                 
 We put this file in the ./src/main/java/event directory of the development directory.
 
-The Mapping file
+## The Mapping file
 
 To map this class to the database table, we create the following Hibernate Mapping file:
 
                     
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+            "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="event">
-	<class name="Event" table="EVENTS">
+    <hibernate-mapping package="event">
+    	<class name="Event" table="EVENTS">
 
-        <id name="id" column="EVENT_ID">
-			<generator class="native"/>
-		</id>
+            <id name="id" column="EVENT_ID">
+    			<generator class="native"/>
+    		</id>
 
-        <property name="date" type="timestamp" column="EVENT_DATE"/>
+            <property name="date" type="timestamp" column="EVENT_DATE"/>
 
-        <property name="title" type="string"/>
+            <property name="title" type="string"/>
 
-        <property name="location" type="org.hibernatespatial.GeometryUserType"  column="LOC"/>
-	</class>
-</hibernate-mapping>
+            <property name="location" type="org.hibernatespatial.GeometryUserType"  column="LOC"/>
+    	</class>
+    </hibernate-mapping>
 	
                 
 Hibernate Spatial provides the GeometryUserType that enables Hibernate to store the location property properly.
 
 We save this mapping file in ./src/main/resources/event/Event.hbm.xml along-side the java source file.
 
-The Hibernate Configuration
+## The Hibernate Configuration
 
 We proceed with the hibernate configuration file. The only difference w.r.t. normal Hibernate configurations files is in the dialect property. Hibernate Spatial extends the HibernateDialects so that the spatial features of the database are available within HQL and the SpatialCriteria (see below). So instead of using the (in our case) PostgreSQLDialect, we use Hibernate Spatial's extension of that dialect which is the PostGISDialect. Our hibernate.cfg.xml looks like this:
 
                         
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    <?xml version='1.0' encoding='utf-8'?>
+    <!DOCTYPE hibernate-configuration PUBLIC
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+            "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
-<hibernate-configuration>
+    <hibernate-configuration>
 
-    <session-factory>
+        <session-factory>
 
-        <!-- Database connection settings -->
-        <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/events</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password"></property>
+            <!-- Database connection settings -->
+            <property name="connection.driver_class">org.postgresql.Driver</property>
+            <property name="connection.url">jdbc:postgresql://localhost:5432/events</property>
+            <property name="connection.username">postgres</property>
+            <property name="connection.password"></property>
 
-        <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">1</property>
+            <!-- JDBC connection pool (use the built-in) -->
+            <property name="connection.pool_size">1</property>
 
-        <!-- SPATIAL SQL dialect -->
-        <property name="dialect">org.hibernatespatial.postgis.PostgisDialect</property>
+            <!-- SPATIAL SQL dialect -->
+            <property name="dialect">org.hibernatespatial.postgis.PostgisDialect</property>
 
-        <!-- Enable Hibernate's automatic session context management -->
-        <property name="current_session_context_class">thread</property>
+            <!-- Enable Hibernate's automatic session context management -->
+            <property name="current_session_context_class">thread</property>
 
-        <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+            <!-- Disable the second-level cache  -->
+            <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
-        <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">true</property>
+            <!-- Echo all executed SQL to stdout -->
+            <property name="show_sql">true</property>
 
-        <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+            <!-- Drop and re-create the database schema on startup -->
+            <property name="hbm2ddl.auto">create</property>
 
-        <mapping resource="event/Event.hbm.xml"/>
+            <mapping resource="event/Event.hbm.xml"/>
 
-    </session-factory>
+        </session-factory>
 
-</hibernate-configuration>		
+    </hibernate-configuration>		
 
 
 As is usual when building with maven, we store this file in the ./src/main/resources directory.
@@ -340,7 +336,7 @@ Note that this configuration file means that Hibernate will connect to the "even
 
 Also notice that the "hbm2dll.auto" property is activated. This will re-create the database everytime the application is run (more precisely when the Hibernate SessionFactory is run).
 
-The HibernateUtil helper
+## The HibernateUtil helper
 
 The HibernatUtil class creates the Hibernate SessionFactory for the application, and provides a getter to it. (The code below is copied from the Hibernate Tutorial without change).
 
@@ -374,7 +370,7 @@ The HibernatUtil class creates the Hibernate SessionFactory for the application,
 
 
             
-The EventManager
+## The EventManager
 
 We are now ready to write a first version of the main application classEventManager.
 
@@ -475,7 +471,8 @@ We can now build this program using maven:
      $ mvn compile 
                 
 We can now execute the program using maven as follows:
-   mvn exec:java -Dexec.mainClass="event.EventManager" -Dexec.args="store POINT(10 5)"
+   
+    $ mvn exec:java -Dexec.mainClass="event.EventManager" -Dexec.args="store POINT(10 5)"
                 
 This will create the events table, add a new event with the date set to today, the title to "My Title", and the point to coordinates (10,15).
 
@@ -483,21 +480,21 @@ We can check the content of the events table using the astext() function that co
 
        events=# select title, astext(loc) from events;
 
-                title | astext
-                ----------+--------------
-                My Event | POINT(10 15)
-                (1 row) 
+        title | astext
+        ----------+--------------
+        My Event | POINT(10 15)
+        (1 row) 
             
-Spatial Queries
+## Spatial Queries
 
 We will now modify the EventManager by adding an action to list all events within a certain area. This will show how to use Hibernate Spatial for spatial querying.
 
-Important: comment out the hbm2ddl.auto property in the hibernate.cfg.xml so that the event table is not deleted each time we run the EventManager.
+_Important: comment out the hbm2ddl.auto property in the hibernate.cfg.xml so that the event table is not deleted each time we run the EventManager_.
 
 Here is the addition to the main method in the EventManager that implements the "find" action.
 
                     
-...
+    ...
         if (args[0].equals("store")) {
             mgr.createAndStoreEvent("My Event", new Date(), assemble(args));
         }else if (args[0].equals("find")){
@@ -509,7 +506,7 @@ Here is the addition to the main method in the EventManager that implements the 
                                 ", Location: " + event.getLocation());
             }
         }	
-...
+    ...
 
                 
 We also need to implement the find(String filter) method.
@@ -518,12 +515,12 @@ The find method takes a WKT string that represents a polygon, and searches the e
 Here is the code.
 
                     
-...
-//New imports
-import org.hibernate.Criteria;
-import java.util.List;
-import org.hibernatespatial.criterion.SpatialRestrictions;
-...
+    ...
+    //New imports
+    import org.hibernate.Criteria;
+    import java.util.List;
+    import org.hibernatespatial.criterion.SpatialRestrictions;
+    ...
 
 
     private List find(String wktFilter){
@@ -543,41 +540,42 @@ import org.hibernatespatial.criterion.SpatialRestrictions;
         session.getTransaction().commit();
         return results;
     }
-...
+    ...
 
 
 
                 
 The SpatialRestrictions class provides utility methods to create Criterion instances for spatial queries. In our example the WITHIN spatial operator is used to query all events with a location within a specified filter geometry.
 
-The witin method (as most other methods ofSpatialRestrictions) takes two parameters. The first is the name of the Geometry-valued property on which the filter is applied; the second is the filter geometry.
+The within method (as most other methods of SpatialRestrictions) takes two parameters. The first is the name of the Geometry-valued property on which the filter is applied; the second is the filter geometry.
 
 If now run:
 
-   $ mvn exec:java -Dexec.mainClass="event.EventManager" -Dexec.args="find POLYGON((1\ 1,20\ 1,20\20,1\ 20,1\ 1))" 
+    $ mvn exec:java -Dexec.mainClass="event.EventManager" -Dexec.args="find POLYGON((1\ 1,20\ 1,20\20,1\ 20,1\ 1))" 
                 
 We get
                     
-...
-Filter is : POLYGON ((1 1, 20 1, 20 20, 1 20, 1 1))
-Hibernate: select this_.EVENT_ID as EVENT1_0_0_, this_.EVENT_DATE as EVENT2_0_0_, this_.title as title0_0_, this_.LOC as LOC0_0_ from EVENTS this_ where (this_.LOC && ?  AND   within(this_.LOC, ?))
-Event: My Event, Time: 2010-04-05 19:58:36.896, Location: POINT (10 5)
-...
+    ...
+    Filter is : POLYGON ((1 1, 20 1, 20 20, 1 20, 1 1))
+    Hibernate: select this_.EVENT_ID as EVENT1_0_0_, this_.EVENT_DATE as EVENT2_0_0_, this_.title as title0_0_, this_.LOC as LOC0_0_ from EVENTS this_ where (this_.LOC && ?  AND   within(this_.LOC, ?))
+    Event: My Event, Time: 2010-04-05 19:58:36.896, Location: POINT (10 5)
+    ...
 
                 
 The first line is the Filter that is echoed toSystem.out, the second line is the SQL generated by Hibernate (with the help of Hibernate Spatial). This is shown because the show_sql property is set in the configuration file. The last line is the output generated by the find action.
 An alternative approach is using HQL. The Postgis Dialect registers functions and operators specified in the the Simple Features for SQL specification. So we could write.
 
-                    ...
-                    Query q = session
-                    .createQuery("from Event where within(location, ?) = true");
-                    Type geometryType = GeometryUserType.TYPE;
-                    q.setParameter(0, filter, geometryType);
-                    List result = q.list();
-                    ...
+            ...
+            Query q = session
+            .createQuery("from Event where within(location, ?) = true");
+            Type geometryType = GeometryUserType.TYPE;
+            q.setParameter(0, filter, geometryType);
+            List result = q.list();
+            ...
                 
 This is pretty much like any other HQL query in Hibernate, with the (slightly annoying) complication of having to explicitly specify the Type for the GeometryUserType in thesetParameter-method.
-But I use Oracle, so what do I do?
+
+## But I use Oracle, so what do I do?
 
 Suppose we want to implement the EventManager on top of Oracle, how do we proceed? We need to change the following items
 
@@ -587,7 +585,7 @@ Remove the postgis.jar
 Modify the hibernate.cfg.xml configuration file so that it points to a suitable Oracle database, uses the Oracle JDBC driver, and has OracleSpatial10gDialect as dialect.
 ... and your done!
 
-.. and what about MySQL?
+## .. and what about MySQL?
 
 Recent versions of MySQL have (limited) support for spatial types. To get Hibernate Spatial to work with MySQL, change the following items:
 
@@ -599,7 +597,7 @@ Please note that MySQL's implementation of the spatial types is incomplete at th
 
 The MySQLSpatialDialect extends the vanilla MySQLDialect and therefore only supports the MyISAM tables.
 
-.. and what about Microsoft SQL Server 2008?
+## .. and what about Microsoft SQL Server 2008?
 
 Starting with SQL Server 2008, Microsoft has added full support for OGC Simple Features for SQL. To use this database with Hibernate Spatial, change the following items:
 
@@ -607,78 +605,80 @@ Replace the hibernate-spatial-postgis-*.jar provider with the hibernate-spatial-
 Replace the Postgresql Driver with the Microsoft SQL Server JDBC Driver.
 Remove the postgis.jar
 Modify the hibernate.cfg.xml configuration file so that it points to a suitable SQL Server database, uses the SQL Server JDBC driver, and has SQLServerSpatialDialect as dialect.
-Can I Use JPA Annotations with Hibernate Spatial?
+
+## Can I Use JPA Annotations with Hibernate Spatial?
 
 In stead of using *.hbm.xml mapping files, you can also use JPA annotations. Well almost: JPA doesn't support spatial objects, and doesn't have an extension mechanism to add new types. So using only JPA annotations won't work. Fortunately, the Hibernate Annotations implementation of JPA does have a means for mapping UserTypes.
 
 Let's modify the code to use annotations. We change the source code of the Events class so that it looks like this
 
  
-package event;
+    package event;
 
-import java.util.Date;
+    import java.util.Date;
 
-import javax.persistence.*;
+    import javax.persistence.*;
 
-import org.hibernate.annotations.Type;
+    import org.hibernate.annotations.Type;
 
-import com.vividsolutions.jts.geom.Point;
+    import com.vividsolutions.jts.geom.Point;
 
-@Entity
-@Table(name = "EVENTS")
-public class Event {
+    @Entity
+    @Table(name = "EVENTS")
+    public class Event {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "EVENT_ID")
-    private Long id;
+        @Id
+        @GeneratedValue
+        @Column(name = "EVENT_ID")
+        private Long id;
 
-    @Column(name = "TITLE")
-    private String title;
+        @Column(name = "TITLE")
+        private String title;
 
-    @Column(name = "EVENT_DATE")
-    private Date date;
+        @Column(name = "EVENT_DATE")
+        private Date date;
 
 
-    @Column(name = "LOC")
-    @Type(type = "org.hibernatespatial.GeometryUserType")
-    private Point location;
+        @Column(name = "LOC")
+        @Type(type = "org.hibernatespatial.GeometryUserType")
+        private Point location;
 
-    public Event() {
+        public Event() {
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        private void setId(Long id) {
+            this.id = id;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public void setDate(Date date) {
+            this.date = date;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public Point getLocation() {
+            return this.location;
+        }
+
+        public void setLocation(Point location) {
+            this.location = location;
+        }
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    private void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Point getLocation() {
-        return this.location;
-    }
-
-    public void setLocation(Point location) {
-        this.location = location;
-    }
-}
 Note that for the Geometry field we needed to use the Hibernate-specific @Type annotation.
 
 Next, we replace the mapping resource by replacing the following line from the hibernate.cfg.xml
