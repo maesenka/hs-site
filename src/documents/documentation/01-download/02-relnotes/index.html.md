@@ -3,6 +3,21 @@ menuTitle: "Release Notes"
 isNav: true
 tags: []
 ```
+## Release 4.0 (2013-12-13)
+
+### Bug
+
+* [HIBSPA-95](http://www.hibernatespatial.org/jira/browse/HIBSPA-95) - OGC_STRICT property in org.hibernate.spatial.oracle.OracleSpatial10gDialect.properties is not read/set.
+
+### Improvement
+
+* [HIBSPA-94](http://www.hibernatespatial.org/jira/browse/HIPBSP-94) - hibernate-spatial needs updating in order to work with hibernate4
+* [HIBSPA-99](http://www.hibernatespatial.org/jira/browse/HIPBSP-99) - Support dwithin for Oracle dialect
+* [HIBSPA-100](http://www.hibernatespatial.org/jira/browse/HIPBSP-100) - Connection-Finder should be configurable using hibernate properties
+* [HIBSPA-101](http://www.hibernatespatial.org/jira/browse/HIPBSP-101) - Expand GeoDB supported functions
+* [HIBSPA-102](http://www.hibernatespatial.org/jira/browse/HIPBSP-102) - MySQL 5.6 ST_CONTAINS support for hibernate spatial
+
+
 ## Release 1.1.1 (2011-1-27)
 
 ### Bug

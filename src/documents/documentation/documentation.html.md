@@ -10,7 +10,7 @@ tags: ['intro','page']
 
 # Quick Start
 
-This guide applies to the current version of Hibernate Spatial (4.0).
+This guide applies to the current version of Hibernate Spatial (4.0). For older versions, Check out the [Tutorial for Hibernate Spatial 1](02-Tutorial/02-tutorial1).
 
 ### Installing Hibernate Spatial
 
@@ -58,8 +58,5 @@ The geometry property can be mapped by Hibernate by means of the special type or
             
 Working with geographic data (geometry-valued properties) is now exactly the same as working with any other Hibernate-supported type.
 
-For more information, see the [Tutorial for Hibernate Spatial 4](02-Tutorial/01-tutorial-4).
+For more information, see the [Tutorial for Hibernate Spatial 4](02-Tutorial/01-tutorial4).
  
-## Older Versions (Hibernate Spatial 1.x)
-
-Check out the [Tutorial for Hibernate Spatial 1](02-Tutorial/02-tutorial-1)
