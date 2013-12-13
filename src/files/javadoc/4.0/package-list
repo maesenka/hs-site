@@ -1,0 +1,15 @@
+org.hibernate.spatial
+org.hibernate.spatial.criterion
+org.hibernate.spatial.dialect
+org.hibernate.spatial.dialect.h2geodb
+org.hibernate.spatial.dialect.mysql
+org.hibernate.spatial.dialect.oracle
+org.hibernate.spatial.dialect.oracle.criterion
+org.hibernate.spatial.dialect.postgis
+org.hibernate.spatial.dialect.sqlserver
+org.hibernate.spatial.dialect.sqlserver.convertors
+org.hibernate.spatial.helper
+org.hibernate.spatial.integration
+org.hibernate.spatial.jts
+org.hibernate.spatial.jts.mgeom
+org.hibernate.spatial.util

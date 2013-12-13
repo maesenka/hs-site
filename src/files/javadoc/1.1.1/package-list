@@ -1,0 +1,9 @@
+org.hibernatespatial
+org.hibernatespatial.cfg
+org.hibernatespatial.criterion
+org.hibernatespatial.helper
+org.hibernatespatial.mgeom
+org.hibernatespatial.pojo
+org.hibernatespatial.readers
+org.hibernatespatial.spi
+org.hibernatespatial.util
