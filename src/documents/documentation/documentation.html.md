@@ -12,11 +12,41 @@ tags: ['intro','page']
 
 This guide applies to the current version of Hibernate Spatial (4.0). For older versions, Check out the [Tutorial for Hibernate Spatial 1](02-Tutorial/02-tutorial1).
 
-### Installing Hibernate Spatial
-
 You will need to have the following libraries in your classpath: hibernate, a JDBC driver and hibernate-spatial.jar, plus all transitive dependencies.
 
 Geographic objects (or features) are characterized by having a geometry attribute: an attribute that describes the location and geometry of the object by means of a set of coordinates. Hibernate Spatial uses the Geometry package of the Java Topology Suite to represent the geometries in Java.
+
+If you are using maven you should first add the Hibernate Spatial and GeoTools repositories to you pom.xml
+
+        ...
+        <repositories>
+                <repository>
+                        <id>OSGEO GeoTools repo</id>
+                        <url>http://download.osgeo.org/webdav/geotools</url>
+                </repository>
+                <repository>
+                        <id>Hibernate Spatial repo</id>
+                        <url>http://www.hibernatespatial.org/repository</url>
+                </repository>
+
+        </repositories>
+        ...
+
+            
+And then add Hibernate Spatial as a dependency.
+        
+        ...
+        <dependencies>
+                ...
+                <dependency>
+                        <groupId>org.hibernate</groupId>
+                        <artifactId>hibernate-spatial</artifactId>
+                        <version>4.0</version>
+                </dependency>
+                ...
+        </dependencies>
+        ...
+           
 
 ### Configuring a spatial dialect
 
