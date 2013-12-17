@@ -9,12 +9,6 @@ tags: ['tutorial', 'documentation']
 
 See the Dialect specific pages for usage notes.
 
-# Features
-
-Hibernate Spatial uses the Java Topology Suite (JTS) as its geometry model. JTS is an implementation of the OpenGIS Simple Features Implementation Specification for SQLv. 1.1 (SFS). This specification is implemented in most RDBMS with spatial data support. It is also a direct precursor to a precursor to SQL/MM Part 3: Spatial (ISO/IEC 13249-3).
-
-The SFS specification defines a set of functions on geometries. Hibernate Spatial makes a subset of these functions available in HQL and in the criteria query API (see the SpatialRestrictions class in the org.hibernatespatial.criterion package).
-
 Not all databases support all the functions defined by Hibernate Spatial. The table below provides an overview of the functions provided by each database
 
 <table align="center" border="1" class="bodyTable">

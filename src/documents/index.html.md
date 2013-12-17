@@ -23,6 +23,13 @@ There is a similar project for NHibernate: [NHibernate.Spatial](http://nhforge.o
 * Hibernate Spatial version 1.1.x is compatible with Hibernate 3.6.x
 * Hibernate Spatial version 1.0 is compatible with Hibernate 3.2.x - 3.5.x
 
+# Features
+
+Hibernate Spatial uses the [Java Topology Suite (JTS)](http://tsusiatsoftware.net/jts/main.html) as its geometry model. JTS is an implementation of the OpenGIS Simple Features Implementation Specification for SQLv. 1.1 (SFS). This specification is implemented in most RDBMS with spatial data support. It is also a direct precursor to a precursor to SQL/MM Part 3: Spatial (ISO/IEC 13249-3).
+
+The SFS specification defines a set of functions on geometries. Hibernate Spatial makes a subset of these functions available in HQL and in the criteria query API (see the [`SpatialRestrictions`](/javadoc/4.0/index.html) class in the org.hibernatespatial.criterion package).
+
+Not all databases support all the functions defined by Hibernate Spatial. The [Spatial Dialect Overview page](/documentation/03-dialects/01-overview) has a table that provides an overview of the available HQL functions, and what databases support them.
 
 # Getting started
 
