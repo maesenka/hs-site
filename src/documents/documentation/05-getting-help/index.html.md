@@ -6,7 +6,7 @@ isNav: true
 If you have any questions about Hibernate Spatial, the best place to look are the mailing lists. The list Hibernatespatial-users is intended for users of Hibernate, and is the most active. 
 
 <p>
-<table border="1" padding="10px" >
+<table class="maillists">
 	<tr>
 		<th>Name</th><th>Subscribe</th><th>Unsubscribe</th><th>Archive</th>
 	</tr>

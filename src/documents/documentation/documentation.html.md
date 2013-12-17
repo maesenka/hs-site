@@ -14,7 +14,7 @@ This guide applies to the current version of Hibernate Spatial (4.0). For older 
 
 You will need to have the following libraries in your classpath: hibernate, a JDBC driver and hibernate-spatial.jar, plus all transitive dependencies.
 
-Geographic objects (or features) are characterized by having a geometry attribute: an attribute that describes the location and geometry of the object by means of a set of coordinates. Hibernate Spatial uses the Geometry package of the Java Topology Suite to represent the geometries in Java.
+Geographic objects (or features) are characterized by having a geometry attribute: an attribute that describes the location and geometry of the object by means of a set of coordinates. Hibernate Spatial uses the Geometry package of the [Java Topology Suite](http://tsusiatsoftware.net/jts/main.html) to represent the geometries in Java.
 
 If you are using maven you should first add the Hibernate Spatial and GeoTools repositories to you pom.xml
 
