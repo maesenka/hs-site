@@ -21,8 +21,7 @@ Not all databases support all the functions defined by Hibernate Spatial. The ta
                     </tr>
                 </thead>
                 <tbody><tr class="a">
-                    <td align="left">int dimension(Geometry)</td><td align="left">SFS §2.1.1.1 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td>
+                    <td align="left">int dimension(Geometry)</td><td align="left">SFS §2.1.1.1 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td>
                 </tr>
                 <tr class="b">
                     <td align="left">String geometrytype(Geometry)</td><td align="left">SFS §2.1.1.1 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td>
@@ -47,7 +46,7 @@ Not all databases support all the functions defined by Hibernate Spatial. The ta
                 </tr>
                 <tr class="a">
                     <td align="left">Geometry boundary(Geometry)</td><td align="left">SFS §2.1.1.1 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
@@ -79,7 +78,7 @@ Not all databases support all the functions defined by Hibernate Spatial. The ta
                 </tr>
                 <tr class="a">
                     <td align="left">boolean relate(Geometry, Geometry, String) </td><td align="left">SFS §2.1.1.2 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
@@ -87,7 +86,7 @@ Not all databases support all the functions defined by Hibernate Spatial. The ta
                 </tr>
                 <tr class="a">
                     <td align="left">double distance(Geometry, Geometry)</td><td align="left">SFS §2.1.1.3 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
@@ -96,34 +95,34 @@ Not all databases support all the functions defined by Hibernate Spatial. The ta
                 </tr>
                 <tr class="a">
                     <td align="left">Geometry convexhull(Geometry)</td><td align="left">SFS §2.1.1.3 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
                     <td align="left">Geometry intersection(Geometry, Geometry)</td><td align="left">SFS §2.1.1.3 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="a">
                     <td align="left">Geometry geomunion(Geometry, Geometry)</td><td align="left">SFS §2.1.1.3 (renamed from union)</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
                     <td align="left">Geometry difference(Geometry, Geometry)</td><td align="left">SFS §2.1.1.3 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="a">
                     <td align="left">Geometry symdifference(Geometry, Geometry)</td><td align="left">SFS §2.1.1.3 </td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
-               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+               	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td>
                 </tr>
                 <tr class="b">
                         <th align="left" colspan="7">Common non-SFS functions</th>
                 </tr>
                 <tr class="a">
-                    <td align="left">boolean dwithin(Geometry, Geometry, double)</td><td align="left">Returns true if the geometries are within the specified distance of one another</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
+                    <td align="left">boolean dwithin(Geometry, Geometry, double)</td><td align="left">Returns true if the geometries are within the specified distance of one another</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span>
                	</td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
                	</td><td align="center"><span class="glyphicon glyphicon-minus-sign"></span>
                	</td><td align="center"><span class="glyphicon glyphicon-ok-sign"></span></td>
