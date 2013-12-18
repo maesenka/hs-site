@@ -18,7 +18,7 @@
 							class="<%= 'active'	if (@document.url is document.url  or ( (@document.url.search /documentation/ is 1) and (document.url is "/documentation")))  %>"
 						>
 							<a href="<%= document.url %>" property="dc:title">
-								<%= document.title %>
+								<%= document.menuTitle || document.title %>
 							</a>
 						</li>
 					<% end %>

@@ -1,7 +1,9 @@
 ```
-menuTitle: "Releases"
+menuTitle: 'Releases'
+isMain: true
 isNav: true
-tags: ['postgres']
+layout: page
+pageOrder: 3
 ```
 
 ## Release 4.0

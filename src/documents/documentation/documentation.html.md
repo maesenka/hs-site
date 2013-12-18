@@ -1,6 +1,6 @@
 ```
 title: Documentation
-menuTitle: Quick Start
+menuTitle: Documentation
 isMain: true
 isNav: true
 layout: default
