@@ -88,5 +88,5 @@ The geometry property can be mapped by Hibernate by means of the special type or
             
 Working with geographic data (geometry-valued properties) is now exactly the same as working with any other Hibernate-supported type.
 
-For more information, see the [Tutorial for Hibernate Spatial 4](02-Tutorial/01-tutorial4).
+For more information, see the [Tutorial for Hibernate Spatial 4](/documentation/02-Tutorial/01-tutorial4).
  
