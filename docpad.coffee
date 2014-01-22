@@ -46,6 +46,10 @@ docpadConfig = {
 				"/styles/style.css"
 			]
 
+			# Services plugin configuration ( https://github.com/docpad/docpad-plugin-services )
+			services:
+				googleAnalytics: 'UA-43281004-1'
+
 			# Scripts
 			scripts: [
 				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"
