@@ -19,6 +19,7 @@ There is a similar project for NHibernate: [NHibernate.Spatial](http://nhforge.o
 
 # Compatibility with Hibernate ORM
 
+* Hibernate Spatial version 4.3 is compatible with Hibernate 4.3.x only
 * Hibernate Spatial version 4.0 is compatible with Hibernate 4.x only
 * Hibernate Spatial version 1.1.x is compatible with Hibernate 3.6.x
 * Hibernate Spatial version 1.0 is compatible with Hibernate 3.2.x - 3.5.x
