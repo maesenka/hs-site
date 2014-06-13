@@ -4,6 +4,19 @@ isNav: true
 tags: []
 ```
 
+## Release 4.3 (2014-06-13)
+### Bug
+* [HIBSPA-105](http://www.hibernatespatial.org/jira/browse/HIBSPA-105) - Hibernat Spatial 4.0 is not compatible with Hibernate 4.3.0
+* [HIBSPA-109](http://www.hibernatespatial.org/jira/browse/HIBSPA-109) - Error in method getSpatialFilterExpression(String)
+
+### Improvement
+* [HIBSPA-106](http://www.hibernatespatial.org/jira/browse/HIBSPA-106) - Removing case statement for SDO_RELATE clause in non OGC strict mode leads to significant performance improvement
+
+### New Feature
+* [HIBSPA-107](http://www.hibernatespatial.org/jira/browse/HIBSPA-107) - Add undocumented MySQL 5.6.1 spatial functions to MySQLSpatial56Dialect
+
+
+
 ## Release 4.0.1 (2014-06-13)
 
 ### Bug

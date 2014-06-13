@@ -5,6 +5,13 @@ isNav: true
 layout: page
 pageOrder: 3
 ```
+## Release 4.3
+
+**This release is compatible with Hibernate 4.3.x only.**
+
+* Hibernate Spatial (includes all dialects): [hibernate-spatial-4.3.jar](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.3/hibernate-spatial-4.3.jar)  ([md5](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.3/hibernate-spatial-4.3.jar.md5))
+
+
 
 ## Release 4.0.1
 
