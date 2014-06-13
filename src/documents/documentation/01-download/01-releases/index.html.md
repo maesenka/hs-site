@@ -6,9 +6,15 @@ layout: page
 pageOrder: 3
 ```
 
+## Release 4.0.1
+
+**This release is compatible with Hibernate 4.0 to 4.2.x only.**
+
+* Hibernate Spatial (includes all dialects): [hibernate-spatial-4.0.1.jar](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.0.1/hibernate-spatial-4.0.1.jar)  ([md5](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.0.1/hibernate-spatial-4.0.1.jar.md5))
+
 ## Release 4.0
 
-**This release is compatible with Hibernate 4.x only.**
+**This release is compatible with Hibernate 4.0 to 4.2.x only.**
 
 * Hibernate Spatial (includes all dialects): [hibernate-spatial-4.0.jar](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.0/hibernate-spatial-4.0.jar)  ([md5](http://www.hibernatespatial.org/repository/org/hibernate/hibernate-spatial/4.0/hibernate-spatial-4.0.jar.md5))
 
