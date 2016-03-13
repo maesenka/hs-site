@@ -4,13 +4,6 @@ This contains the docpad sources for the Hibernate Spatial site
 Generating the site
 ===================
 
-1. Install docpad (http://docpad.org/)
-2. cd to root of the site
-3. execute 
-	
-	$ npm install
+to generate the site, use the bin/deploy.sh script. 
 
-4. generate the site
-	
-	$ docpad generate	
-
+See also the instructions on: https://gist.github.com/Hypercubed/5804999
