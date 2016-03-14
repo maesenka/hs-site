@@ -38,14 +38,17 @@
 </head>
 <body>
 	<%- @partial('navbar.html.eco', {mainItems: @getCollection('mains').toJSON(), currentDoc: @document }) %>
-
+	<%- @partial('hib5.html.eco', {showH5Jumbo: @document.showH5Jumbo}) %>
+	<!-- Warning -->
 	<!-- Content -->
 	<div class="container bs-docs-container bs-content">
+
 		<!-- Example row of columns -->
 		<div class="row"  >
 			<div id="navbar" class="col-md-2"> 				
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url, "navs")}) %>
     		</div>
+
   		    <div class="col-md-10">
 				<!-- Content -->
 				<section id="content">

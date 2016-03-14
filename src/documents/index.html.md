@@ -2,6 +2,7 @@
 title: Overview
 menuTitle: Overview
 isMain: true
+showH5Jumbo: true
 layout: no-sidebar
 pageOrder: 1
 tags: ['intro','page']

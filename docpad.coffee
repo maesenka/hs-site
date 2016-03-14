@@ -84,6 +84,12 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			@site.keywords.concat(@document.keywords or []).join(', ')
 
+		# should we should the Hibernate 5 notice Jumbotron? Default to true.
+		getShowH5Jumbo: ->
+			if @document.showH5Jumbo?				
+				@document.showH5Jumbo
+			else
+				true					
 
 	# =================================
 	# Collections

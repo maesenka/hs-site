@@ -1,0 +1,12 @@
+<% renderJumbo = (render) => %>
+	<% if render : %>
+	<div class="jumbotron">
+			<div class="container">	    		
+					<h3>Hibernate Spatial is now part of the Hibernate ORM project!</h3>
+					<p>This site contains the documentation for older versions (1.x and 4.x). The documentation for versions 5.x and higher will soon be available on <a href="http://hibernate.org/orm/"> the Hibernate ORM site</a>.	    			
+			 </div>
+	</div>
+	<% end %>
+<% end %>
+
+<%= renderJumbo(@getShowH5Jumbo()) %>
