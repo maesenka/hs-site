@@ -38,7 +38,7 @@
 </head>
 <body>
 	<%- @partial('navbar.html.eco', {mainItems: @getCollection('mains').toJSON(), currentDoc: @document }) %>
-	<%- @partial('hib5.html.eco', {showH5Jumbo: @document.showH5Jumbo}) %>
+	<%- @partial('hib5.html.eco') %>
 	<!-- Warning -->
 	<!-- Content -->
 	<div class="container bs-docs-container bs-content">
