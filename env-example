@@ -1,0 +1,5 @@
+DEPLOY_SOURCE_DIR="out/"
+DEPLOY_DEST_DIR="/var/www/www2.hibernatespatial.org/"
+DEPLOY_SERVER=www2.hibernatespatial.org
+DEPLOY_ACCOUNT=admin
+SSH="ssh -i <location to private key>
