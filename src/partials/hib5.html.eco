@@ -1,9 +1,9 @@
 <% renderWarning = (render) => %>
 	<% if render : %>
 	<div class="alert alert-warning" role="alert">
-			<div class="container">	    		
+			<div class="container">
 					<h3>Hibernate Spatial is now part of the Hibernate ORM project!</h3>
-					<p>This site contains the documentation for older versions (1.x and 4.x). The documentation for versions 5.x and higher will soon be available on <a href="http://hibernate.org/orm/"> the Hibernate ORM site</a>.	    			
+					<p>This site contains the documentation for older versions (1.x and 4.x). The documentation for versions 5.x and higher is available on <a href="http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#spatial"> the Hibernate ORM site</a>.
 			 </div>
 	</div>
 	<% end %>
