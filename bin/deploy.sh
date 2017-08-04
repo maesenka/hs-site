@@ -26,4 +26,5 @@ echo "Deploying ${DIR}/${DEPLOY_SOURCE_DIR} to ${DEPLOY_ACCOUNT}@${DEPLOY_SERVER
 
 #docpad generate --env static
 chmod -R og+Xr out
-rsync $NFLAG -e "$SSH" -rvzp --size-only --delete --exclude-from="$DIR/.deployignore" "${DIR}/${DEPLOY_SOURCE_DIR}" "${DEPLOY_ACCOUNT}@${DEPLOY_SERVER}:${DEPLOY_DEST_DIR}"
+# note that message: "rsync: failed to set permissions on "/var/www/www2.hibernatespatial.org/.": Operation not permitted (1) " can be safely ignored
+rsync $NFLAG -e "$SSH" -rvzp --size-only --delete --quiet --exclude-from="$DIR/.deployignore" "${DIR}/${DEPLOY_SOURCE_DIR}" "${DEPLOY_ACCOUNT}@${DEPLOY_SERVER}:${DEPLOY_DEST_DIR}"
